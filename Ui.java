@@ -122,7 +122,7 @@ public class Ui {
 					{
 					i = i - 2 ;
 					// Break game and announce extra turn
-						GUI.getUserLeftButtonPressed("Player 2 gets an extra turn!", "Hard roll", " Soft roll";
+						GUI.getUserLeftButtonPressed("Player 2 gets an extra turn!", "Hard roll", " Soft roll");
 					}
 			}
 
