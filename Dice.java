@@ -32,7 +32,13 @@ public class Dice
 		}
 		return result;
 	}	
-
-		
-		
+	public static boolean Snakeeye(int sum)	
+	{
+		boolean result = false;
+		if(sum == 2)
+		{
+			result = true;
+		}
+		return result;
+	}		
 }
