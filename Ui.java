@@ -9,7 +9,7 @@ public class Ui {
 		Player player1 = new Player();
 		Player player2 = new Player();
 	
-	while(player1.getScore()< 40 && player2.getScore()<40)
+	while(player1.getScore()<= 40 && player2.getScore()<= 40)
 	{
 		int hit1 = 0;
 		int hit2 = 0;
@@ -65,6 +65,13 @@ public class Ui {
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
+						//Win conditions
+						int score1 = Integer.parseInt(player1.scoreString());
+						if (score1 == 40)
+						{
+							GUI.displayChanceCard("Player1 Wins");
+							System.exit(0); //Ends the game before able to see message !
+						}
 					i = i - 2 ;
 					// Break game and announce extra turn
 						GUI.getUserLeftButtonPressed("Player 1 gets an extra turn!", "Hard roll", " Soft roll");
@@ -123,6 +130,13 @@ public class Ui {
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
+						//Win conditions
+						int score2 = Integer.parseInt(player2.scoreString());
+						if (score2 == 40)
+						{
+							GUI.displayChanceCard("Player2 Wins");
+							System.exit(0); //Ends the game before able to see message !
+						}
 					i = i - 2 ;
 					// Break game and announce extra turn
 						GUI.getUserLeftButtonPressed("Player 2 gets an extra turn!", "Hard roll", " Soft roll");
