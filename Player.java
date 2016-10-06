@@ -22,6 +22,8 @@ public int getScore()
 public void addScore(int score)
 {
 	this.score = this.score + score;
+	if (this.score >= 40)
+		{this.score = 40;}
 }
 // Nulstil scoren
 public void resetScore()
