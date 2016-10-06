@@ -5,6 +5,7 @@ public class Player
 {
 
 	private int score;
+	public boolean First12;
 	
 //Konstruktør
 public Player()
