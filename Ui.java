@@ -38,6 +38,28 @@ public class Ui {
 				// Show dice on board
 					GUI.setDice(hit1,hit2);
 						
+				// Snakeeye => reset score
+					if(Dice.Snakeeye(sum) == true)
+					{
+						player1.resetScore();
+					}
+					// Twice double six win
+					
+					if(sum == 12)	// Checks for double 6
+					{
+						if(player1.First12 == true){
+							GUI.displayChanceCard("Player1 wins by hitting double 6 twice");
+							System.exit(0);
+						}
+						else
+						{
+							player1.First12 = true;
+						} }
+						else 
+						{
+							player1.First12 = false;
+						}	
+				
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
@@ -72,6 +94,29 @@ public class Ui {
 				
 				// Show dice on board
 					GUI.setDice(hit1,hit2);
+				
+				// Snakeeye => resetscore
+					if(Dice.Snakeeye(sum) == true)
+					{
+						player2.resetScore();
+					}
+				// Twice double six win
+					
+					if(sum == 12)	// Checks for double 6
+					{
+						if(player2.First12 == true){
+							GUI.displayChanceCard("Player1 wins by hitting double 6 twice");
+							System.exit(0);
+						}
+						else
+						{
+							player2.First12 = true;
+						} }
+						else 
+						{
+							player2.First12 = false;
+						}
+				
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
