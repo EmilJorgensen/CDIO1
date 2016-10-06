@@ -8,7 +8,7 @@ public class Ui {
 		Dice dice = new Dice();
 		Player player1 = new Player();
 		Player player2 = new Player();
-		
+	
 	while(player1.getScore()< 40 && player2.getScore()<40)
 	{
 		int hit1 = 0;
@@ -39,7 +39,7 @@ public class Ui {
 					GUI.setDice(hit1,hit2);
 						
 				// Snakeeye => reset score
-					if(Dice.Snakeeye(sum) == true)
+					if(Dice.SnakeEye(sum) == true)
 					{
 						GUI.displayChanceCard("Player 1's score is reset to 0 for hitting double 1!");
 						player1.resetScore();
@@ -98,7 +98,7 @@ public class Ui {
 					GUI.setDice(hit1,hit2);
 				
 				// Snakeeye => resetscore
-					if(Dice.Snakeeye(sum) == true)
+					if(Dice.SnakeEye(sum) == true)
 					{
 						player2.resetScore();
 					}
