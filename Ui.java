@@ -41,6 +41,7 @@ public class Ui {
 				// Snakeeye => reset score
 					if(Dice.Snakeeye(sum) == true)
 					{
+						GUI.displayChanceCard("Player 1's score is reset to 0 for hitting double 1!");
 						player1.resetScore();
 					}
 					// Twice double six win
@@ -48,7 +49,8 @@ public class Ui {
 					if(sum == 12)	// Checks for double 6
 					{
 						if(player1.First12 == true){
-							GUI.displayChanceCard("Player1 wins by hitting double 6 twice");
+							GUI.displayChanceCard("Player 1 wins by hitting double 6 twice");
+							GUI.getUserLeftButtonPressed("Player 1 wins!", "End game", "End game");
 							System.exit(0);
 						}
 						else
@@ -105,7 +107,8 @@ public class Ui {
 					if(sum == 12)	// Checks for double 6
 					{
 						if(player2.First12 == true){
-							GUI.displayChanceCard("Player1 wins by hitting double 6 twice");
+							GUI.displayChanceCard("Player 2 wins by hitting double 6 twice");
+							GUI.getUserLeftButtonPressed("Player 2 wins!", "End game", "End game");
 							System.exit(0);
 						}
 						else
@@ -132,7 +135,4 @@ public class Ui {
 			GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 	}	
 	}
-	
-
-	
 }
