@@ -48,28 +48,30 @@ public class Ui {
 					
 					if(sum == 12)	// Checks for double 6
 					{
-						if(player1.First12 == true){
+						if(player1.getFirst12() == true){
 							GUI.displayChanceCard("Player 1 wins by hitting double 6 twice");
 							GUI.getUserLeftButtonPressed("Player 1 wins!", "End game", "End game");
 							System.exit(0);
 						}
 						else
 						{
-							player1.First12 = true;
+							player1.setFirst12(true);
 						} }
 						else 
 						{
-							player1.First12 = false;
+							player1.setFirst12(false);
 						}	
 				
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
+						GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 						//Win conditions
 						int score1 = Integer.parseInt(player1.scoreString());
 						if (score1 == 40)
 						{
-							GUI.displayChanceCard("Player1 Wins");
+							GUI.displayChanceCard("Player 1 Wins!");
+							GUI.getUserLeftButtonPressed("Player 1 wins!", "End game", "End game");
 							System.exit(0); //Ends the game before able to see message !
 						}
 					i = i - 2 ;
@@ -113,28 +115,30 @@ public class Ui {
 					
 					if(sum == 12)	// Checks for double 6
 					{
-						if(player2.First12 == true){
+						if(player2.getFirst12() == true){
 							GUI.displayChanceCard("Player 2 wins by hitting double 6 twice");
 							GUI.getUserLeftButtonPressed("Player 2 wins!", "End game", "End game");
 							System.exit(0);
 						}
 						else
 						{
-							player2.First12 = true;
+							player1.setFirst12(true);
 						} }
 						else 
 						{
-							player2.First12 = false;
+							player1.setFirst12(false);
 						}
 				
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
+						GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 						//Win conditions
 						int score2 = Integer.parseInt(player2.scoreString());
 						if (score2 == 40)
 						{
-							GUI.displayChanceCard("Player2 Wins");
+							GUI.displayChanceCard("Player 2 Wins!");
+							GUI.getUserLeftButtonPressed("Player 2 wins!", "End game", "End game");
 							System.exit(0); //Ends the game before able to see message !
 						}
 					i = i - 2 ;
