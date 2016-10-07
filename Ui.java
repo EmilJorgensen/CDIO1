@@ -69,7 +69,7 @@ public class Ui {
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
-						GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
+						
 						//Win conditions
 						int score1 = Integer.parseInt(player1.scoreString());
 						if (score1 == 40)
@@ -81,6 +81,7 @@ public class Ui {
 					i = i - 2 ;
 					// Break game and announce extra turn
 						GUI.getUserLeftButtonPressed("Player 1 gets an extra turn!", "Hard roll", " Soft roll");
+						GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 					}
 					
 				}
