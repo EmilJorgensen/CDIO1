@@ -5,7 +5,7 @@ public class Player
 {
 
 	private int score;
-	public boolean First12;
+	private boolean First12;
 	
 //Konstruktør
 public Player()
@@ -17,6 +17,17 @@ public int getScore()
 {
 	int result = this.score;
 	return result;
+}
+//Gets First12
+public boolean getFirst12()
+{
+	boolean result = this.First12;
+	return result;
+}
+//Sets First12 to true or false
+public void setFirst12(boolean set)
+{
+	this.First12 = set;
 }
 // Tilføjer en værdi til spillerens score
 public void addScore(int score)
