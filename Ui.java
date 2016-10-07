@@ -8,17 +8,17 @@ public class Ui {
 		Dice dice = new Dice();
 		Player player1 = new Player();
 		Player player2 = new Player();
+		int sum = 0;
+		
+		// Update score in middle of board
+		GUI.displayChanceCard("Sum of dice: " + sum + ".    Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 	
 	while(player1.getScore()<= 40 && player2.getScore()<= 40)
 	{
 		int hit1 = 0;
 		int hit2 = 0;
-		int sum = 0;
 		
 		// Player 1's turn *****************************************************
-		
-		// Update score in middle of board
-			GUI.displayChanceCard("Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 		
 		// Create buttons and show turn (Break game)
 			GUI.getUserLeftButtonPressed("Player 1's turn", "Hard roll", " Soft roll");
@@ -37,6 +37,10 @@ public class Ui {
 						
 				// Show dice on board
 					GUI.setDice(hit1,hit2);
+					
+				// Update score in middle of board
+				GUI.displayChanceCard("Sum of dice: " + sum + ".    Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
+
 						
 				// Snakeeye => reset score
 					if(Dice.SnakeEye(sum) == true)
@@ -83,10 +87,7 @@ public class Ui {
 					
 		}
 		
-		// Update score in middle of board
-			GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
-		
-		
+				
 		// Change of turn to Player 2 *****************************************************
 		
 		GUI.getUserLeftButtonPressed("Player 2's turn", "Hard roll", " Soft roll");
@@ -101,19 +102,22 @@ public class Ui {
 			else
 			{
 				hit2 = dice.getFaceValue();
-				sum = hit1 + hit2;
+				 int sum2 = hit1 + hit2;
 				
 				// Show dice on board
 					GUI.setDice(hit1,hit2);
-				
+	
+				// Update score in middle of board
+				GUI.displayChanceCard("Sum of dice: " + sum2 + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
+
 				// Snakeeye => resetscore
-					if(Dice.SnakeEye(sum) == true)
+					if(Dice.SnakeEye(sum2) == true)
 					{
 						player2.resetScore();
 					}
 				// Twice double six win
 					
-					if(sum == 12)	// Checks for double 6
+					if(sum2 == 12)	// Checks for double 6
 					{
 						if(player2.getFirst12() == true){
 							GUI.displayChanceCard("Player 2 wins by hitting double 6 twice");
@@ -132,7 +136,7 @@ public class Ui {
 				// Equal dice => extra turn
 					if(Dice.Equals(hit1) == true)
 					{
-						GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
+						GUI.displayChanceCard("Sum of dice: " + sum2 + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
 						//Win conditions
 						int score2 = Integer.parseInt(player2.scoreString());
 						if (score2 == 40)
@@ -146,11 +150,9 @@ public class Ui {
 						GUI.getUserLeftButtonPressed("Player 2 gets an extra turn!", "Hard roll", " Soft roll");
 					}
 			}
-
-		}
+					}
 		
-		// Update score in middle of board
-			GUI.displayChanceCard("Sum of dice: " + sum + ".   Player 1's score:  " + player1.scoreString() + "\n" + "     Player 2's Score:  " + player2.scoreString());
+		
 	}	
 	}
 }
